@@ -1,6 +1,6 @@
 from dataclasses import dataclass, field
 from typing import Dict, Any, List
-
+from cag_engine.explanation.trace import ExecutionTrace
 
 @dataclass
 class ExecutionState:
@@ -19,3 +19,12 @@ class ExecutionState:
             "node": node_id,
             "updates": updates
         })
+
+
+@dataclass
+class ExecutionContext:
+    """
+    Couples execution state with execution trace.
+    """
+    state: ExecutionState = field(default_factory=ExecutionState)
+    trace: ExecutionTrace = field(default_factory=ExecutionTrace)
