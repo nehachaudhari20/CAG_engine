@@ -39,3 +39,27 @@ class ExecutionGraph:
             key=lambda e: e.priority,
             reverse=True
         )
+    
+    
+    def merge(
+        self,
+        other: "ExecutionGraph",
+        attach_from: str,
+        attach_to: str
+    ):
+        """
+        Merge another graph into this graph.
+        """
+        if attach_from not in self.nodes:
+           raise ValueError("attach_from node not in graph")
+
+        self.nodes.update(other.nodes)
+        self.edges.extend(other.edges)
+
+        self.edges.append(
+        ExecutionEdge(
+            from_node=attach_from,
+            to_node=attach_to,
+            condition=lambda _: True
+        )
+    )
