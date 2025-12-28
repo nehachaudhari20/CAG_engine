@@ -1,0 +1,12 @@
+[project]
+name = "cag-engine"
+version = "0.1.0"
+description = "DAG-based execution engine for context-augmented agent systems"
+authors = [{ name = "Neha Chaudhari" }]
+requires-python = ">=3.9"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
