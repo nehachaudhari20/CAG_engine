@@ -1,0 +1,6 @@
+Metadata-Version: 2.4
+Name: cag-engine
+Version: 0.1.0
+Summary: DAG-based execution engine for context-augmented agent systems
+Author: Neha Chaudhari
+Requires-Python: >=3.9
